@@ -24,5 +24,8 @@
     "start": "tsc && node dist/index.js",
     "dev": "ts-node-dev index.ts",
     "build": "tsc"
+  },
+  "devDependencies": {
+    "@vercel/node": "^2.7.1"
   }
 }

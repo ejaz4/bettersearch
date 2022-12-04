@@ -1,5 +1,3 @@
-"use strict";
-
 // Read the .env file.
 import * as dotenv from "dotenv";
 dotenv.config();
@@ -13,9 +11,11 @@ const app = Fastify({
 });
 
 // Register your application as a normal plugin.
-app.register(import("./dist/index.js"));
+app.register(require("../../index"), {
+  prefix: "/",
+});
 
-export default async (req, res) => {
+export default async (req: any, res: any) => {
     await app.ready();
     app.server.emit('request', req, res);
 }
