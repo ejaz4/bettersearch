@@ -9,6 +9,6 @@ const port = process.env.PORT || 3000;
 
 setRoutes();
 
-server.listen(port, (err, address) =>{
+server.listen(port, '0.0.0.0', (err, address) =>{
     console.log(`Listening on ${address}`);
 })
